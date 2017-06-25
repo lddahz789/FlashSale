@@ -1,0 +1,32 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="com.flashsale.dao.OrderDAO">
+    	<insert id="insertOrder">
+    		insert ignore into order_ (product_id,user_phone) values (#{productId},#{userPhone})
+    	</insert>
+    	
+    	<select id="queryOrderByIdWithProduct" resultType="com.flashsale.entity.Order">
+    		select
+    		o.product_id,
+    		o.user_phone,
+    		o.status,
+    		o.create_time,
+    		p.product_id as "product.product_id",
+    		p.name as "product.name",
+    		p.stock as "product.stock",
+    		p.start_time as  "product.start_time",
+    		p.end_time as "product.end_time",
+    		p.create_time as "product.create_time"
+    		
+    		from order_ o
+    		inner join
+    		product p
+    		on
+    			o.product_id = p.product_id
+    		
+    		where o.product_id = #{productId} and o.user_phone = #{userPhone};
+    		
+    	</select>
+    </mapper>

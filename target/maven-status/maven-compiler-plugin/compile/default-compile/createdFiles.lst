@@ -1,0 +1,4 @@
+com\flashsale\entity\Product.class
+com\flashsale\entity\Order.class
+com\flashsale\dao\ProductDAO.class
+com\flashsale\dao\OrderDAO.class

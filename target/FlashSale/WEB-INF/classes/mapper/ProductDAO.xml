@@ -1,0 +1,40 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.flashsale.dao.ProductDAO">
+
+	<update id="reduceStock">
+		update
+			product
+		set
+			number = number - 1
+		where
+			product_id = #{productId}
+		and
+			start_time <![CDATA[<=]]> #{saleTime}
+		and
+			end_time >= #{saleTime}
+		and 
+			stock > 0;
+	</update>
+
+
+	<select id="queryById" resultType="com.flashsale.entity.Product">
+		select * from product where product_id = #{productId};
+	</select>
+	
+	<select id="queryAllProducts" resultType="com.flashsale.entity.Product">
+		select
+			 *
+		from 
+			product 
+		order by create_time DESC
+		<if test="offset != null && limit != null">
+			limit #{offset},#{limit}
+		</if>
+		
+			
+		
+	</select>
+</mapper>
