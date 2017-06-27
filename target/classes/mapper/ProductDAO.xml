@@ -8,7 +8,7 @@
 		update
 			product
 		set
-			number = number - 1
+			stock = stock - 1
 		where
 			product_id = #{productId}
 		and

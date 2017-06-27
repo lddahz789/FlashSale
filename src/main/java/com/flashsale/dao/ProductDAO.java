@@ -3,7 +3,11 @@ package com.flashsale.dao;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.flashsale.entity.Product;
+
+
 
 public interface ProductDAO {
 
@@ -16,7 +20,7 @@ public interface ProductDAO {
 	 * @return
 	 * 是否成功
 	 */
-	int reduceStock(long productId, Date saleTime);
+	int reduceStock(@Param("productId") long productId, @Param("saleTime") Date saleTime);
 	
 	/**
 	 * 通过ID获取1个产品对象
@@ -37,5 +41,5 @@ public interface ProductDAO {
 	 * @param limit
 	 * @return
 	 */
-	List<Product> queryAllProducts(int offset, int limit);
+	List<Product> queryAllProducts(@Param("offset") int offset, @Param("limit") int limit);
 }

@@ -1,5 +1,7 @@
 package com.flashsale.dao;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.flashsale.entity.Order;
 
 public interface OrderDAO {
@@ -11,12 +13,12 @@ public interface OrderDAO {
 	 * @return
 	 * 状态 成功与否
 	 */
-	int insertOrder(long productId, long userPhone);
+	int insertOrder(@Param("productId")long productId, @Param("userPhone")long userPhone);
 
 	/**
 	 * 查询一个Order
 	 * @param productId
 	 * @return
 	 */
-	Order queryOrderByIdWithProduct(long productId, long userPhone);
+	Order queryOrderByIdWithProduct(@Param("productId")long productId, @Param("userPhone")long userPhone);
 }
