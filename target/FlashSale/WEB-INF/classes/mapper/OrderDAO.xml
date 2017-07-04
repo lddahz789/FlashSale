@@ -4,10 +4,10 @@
     
     <mapper namespace="com.flashsale.dao.OrderDAO">
     	<insert id="insertOrder">
-    		insert ignore into order_ (product_id,user_phone) values (#{productId},#{userPhone})
+    		insert ignore into order_ (product_id,user_phone,status) values (#{productId},#{userPhone},0)
     	</insert>
     	
-    	<select id="queryOrderByIdWithProduct" resultType="com.flashsale.entity.Order">
+    	<select id="queryOrderByIdWithProduct" resultType="Order">
     		select
     		o.product_id,
     		o.user_phone,

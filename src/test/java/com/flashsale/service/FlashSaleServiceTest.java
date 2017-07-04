@@ -35,10 +35,10 @@ public class FlashSaleServiceTest {
 	public void testGetProductById() {
 		log.info(service.getProductById(1001l));
 	}
-
+	
 	@Test
 	public void testExcuteProcess() {
-		long productId = 10033l;
+		long productId = 1003l;
 		Exposer exposer = service.exportFlashSaleUrl(productId);
 		if (exposer.isExposed()) {
 			String md5 = exposer.getMd5();

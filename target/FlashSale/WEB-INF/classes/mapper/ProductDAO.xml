@@ -8,7 +8,7 @@
 		update
 			product
 		set
-			number = number - 1
+			stock = stock - 1
 		where
 			product_id = #{productId}
 		and
@@ -20,21 +20,19 @@
 	</update>
 
 
-	<select id="queryById" resultType="com.flashsale.entity.Product">
+	<select id="queryById" resultType="Product">
 		select * from product where product_id = #{productId};
 	</select>
 	
-	<select id="queryAllProducts" resultType="com.flashsale.entity.Product">
+	<select id="queryAllProducts" resultType="Product">
 		select
 			 *
 		from 
 			product 
 		order by create_time DESC
-		<if test="offset != null && limit != null">
+		<if test="offset != null and limit != null">
 			limit #{offset},#{limit}
 		</if>
-		
-			
 		
 	</select>
 </mapper>

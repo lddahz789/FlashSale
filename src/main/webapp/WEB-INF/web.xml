@@ -1,10 +1,23 @@
-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
                       http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-         version="3.0"
-         metadata-complete="true">
+	version="3.0" metadata-complete="true">
 
 
+	<!-- 配置dispatcherServlet -->
+	<servlet>
+		<servlet-name>FlashSaleDispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- 配置需要加载的配置文件 -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring/spring-*.xml</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+	<servlet-name>FlashSaleDispatcher</servlet-name>
+	<url-pattern>/</url-pattern>
+	</servlet-mapping>
 
 </web-app>

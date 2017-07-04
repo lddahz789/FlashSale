@@ -41,6 +41,6 @@ public interface FlashSaleService {
 	 * @throws RepeatSaleException
 	 * 操作结果封装 FlashSaleExecution
 	 */
-	FlashSaleExecution excuteFlashSale(long priductId,long userPhone, String md5) 
+	FlashSaleExecution excuteFlashSale(long productId,long userPhone, String md5) 
 			throws FlashSaleException,FlashSaleClosed,RepeatSaleException;
 }

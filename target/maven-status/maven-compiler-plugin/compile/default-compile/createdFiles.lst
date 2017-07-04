@@ -1,4 +1,14 @@
-com\flashsale\entity\Product.class
+com\flashsale\enums\FlashSaleEnum.class
 com\flashsale\entity\Order.class
+com\flashsale\service\impl\FlashSaleServiceImpl.class
+com\flashsale\entity\Product.class
+com\flashsale\dto\FlashSaleExecution.class
+com\flashsale\exception\FlashSaleClosed.class
+com\flashsale\web\FlashSaleController.class
+com\flashsale\exception\FlashSaleException.class
+com\flashsale\service\FlashSaleService.class
 com\flashsale\dao\ProductDAO.class
+com\flashsale\dto\FlashSaleResult.class
 com\flashsale\dao\OrderDAO.class
+com\flashsale\exception\RepeatSaleException.class
+com\flashsale\dto\Exposer.class

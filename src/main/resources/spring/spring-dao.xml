@@ -3,8 +3,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	<!-- 载入数据库配置文件 -->
 	<context:property-placeholder location="classpath:jdbc.properties" />
 	<!-- 数据库连接池 -->
@@ -30,7 +32,7 @@
 		<!-- MyBatis与Spring整合 -->
 		<property name="dataSource" ref="dataSource"/>
 		<!-- MyBatis的全局配置文件 -->
-		<property name="configLocation" value="mybatis-config.xml"/>
+		<property name="configLocation" value="classpath:mybatis-config.xml"/>
 		<!--配置entity包,也就是实体类包,自动扫描,用于别名配置-->
         <property name="typeAliasesPackage" value="com.flashsale.entity"/>
 		 <!--配置需要扫描的mapper.xml文件-->
