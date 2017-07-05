@@ -29,7 +29,11 @@ public interface FlashSaleService {
 	 */
 	Exposer exportFlashSaleUrl(long productId);
 	
-	
+	/**
+	 * 使用数据库存储过程执行秒杀
+	 * @return
+	 */
+	FlashSaleExecution excuteFlashSaleProcedure(long productId,long userPhone, String md5);
 	/**
 	 * 执行秒杀操作
 	 * @param priductId

@@ -33,6 +33,15 @@
 		<if test="offset != null and limit != null">
 			limit #{offset},#{limit}
 		</if>
-		
+	</select>
+	
+	<!-- 使用MyBatis调用存储过程 -->
+	<select id="saleByProcedure" statementType="CALLABLE">
+		call execute_sale(
+			#{productId, jdbcType=BIGINT,mode=IN},
+			#{phone, jdbcType=BIGINT,mode=IN},
+			#{saleTime, jdbcType=TIMESTAMP,mode=IN},
+			#{result, jdbcType=INTEGER,mode=OUT}
+		)
 	</select>
 </mapper>

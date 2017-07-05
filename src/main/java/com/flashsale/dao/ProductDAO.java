@@ -2,6 +2,7 @@ package com.flashsale.dao;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
 
@@ -9,6 +10,12 @@ import com.flashsale.entity.Product;
 
 
 
+/**
+ *
+ * @author Zhuo He (Lyn)
+ * @Date 2017-07-04
+ *
+ */
 public interface ProductDAO {
 
 
@@ -42,4 +49,12 @@ public interface ProductDAO {
 	 * @return
 	 */
 	List<Product> queryAllProducts(@Param("offset") int offset, @Param("limit") int limit);
+	
+	
+	/**
+	 * 使用数据库存储过程进行秒杀
+	 * 
+	 * @param paramMap
+	 */
+	void saleByProcedure(Map<String,Object> paramMap);
 }

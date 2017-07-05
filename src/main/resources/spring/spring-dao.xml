@@ -46,5 +46,11 @@
         <!--给出需要扫描的DAO接口的包-->
         <property name="basePackage" value="com.flashsale.dao"/>
     </bean>
+    
+    <!-- 注入RedisDAO -->
+    <bean id="redisDAO" class="com.flashsale.dao.cache.RedisDAO">
+    	<constructor-arg index="0" value="106.14.173.104"/>
+    	<constructor-arg index="1" value="6379"/>
+    </bean>
 	
 </beans>

@@ -42,7 +42,7 @@ public class FlashSaleServiceTest {
 		Exposer exposer = service.exportFlashSaleUrl(productId);
 		if (exposer.isExposed()) {
 			String md5 = exposer.getMd5();
-			long phone = 13917556852l;
+			long phone = 13917556890l;
 			try {
 				FlashSaleExecution result = service.excuteFlashSale(productId, phone, md5);
 				log.info(result);
@@ -53,6 +53,18 @@ public class FlashSaleServiceTest {
 			}
 		} else {
 			log.warn("ÃëÉ±»¹Î´¿ªÆô: " + exposer);
+		}
+	}
+	
+	@Test
+	public void testProcedure(){
+		long id = 1003l;
+		long phone = 13777808566l;
+		Exposer exposer = service.exportFlashSaleUrl(id);
+		if (exposer.isExposed()){
+			String md5 = exposer.getMd5();
+			FlashSaleExecution result = service.excuteFlashSaleProcedure(id, phone, md5);
+		log.info(result.getStatusInfo());
 		}
 	}
 

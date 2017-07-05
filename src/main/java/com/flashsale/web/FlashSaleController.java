@@ -109,7 +109,8 @@ public class FlashSaleController {
 		FlashSaleResult<FlashSaleExecution> result;
 		
 		try {
-			FlashSaleExecution flashSaleExecution = service.excuteFlashSale(productId, userPhone, md5);
+			//通过存储过程调用
+			FlashSaleExecution flashSaleExecution = service.excuteFlashSaleProcedure(productId, userPhone, md5);
 			return new FlashSaleResult<FlashSaleExecution>(true,flashSaleExecution);
 		} catch (FlashSaleClosed e) {
 			FlashSaleExecution execution = new FlashSaleExecution(productId, FlashSaleEnum.END);

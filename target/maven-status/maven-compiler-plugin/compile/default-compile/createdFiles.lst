@@ -1,4 +1,5 @@
 com\flashsale\enums\FlashSaleEnum.class
+com\flashsale\dao\cache\RedisDAO.class
 com\flashsale\entity\Order.class
 com\flashsale\service\impl\FlashSaleServiceImpl.class
 com\flashsale\entity\Product.class

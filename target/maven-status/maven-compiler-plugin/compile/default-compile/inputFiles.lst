@@ -1,5 +1,6 @@
 D:\JavaRelated\workspace\FlashSale\src\main\java\com\flashsale\service\FlashSaleService.java
 D:\JavaRelated\workspace\FlashSale\src\main\java\com\flashsale\dao\OrderDAO.java
+D:\JavaRelated\workspace\FlashSale\src\main\java\com\flashsale\dao\cache\RedisDAO.java
 D:\JavaRelated\workspace\FlashSale\src\main\java\com\flashsale\dto\FlashSaleExecution.java
 D:\JavaRelated\workspace\FlashSale\src\main\java\com\flashsale\enums\FlashSaleEnum.java
 D:\JavaRelated\workspace\FlashSale\src\main\java\com\flashsale\exception\FlashSaleClosed.java
